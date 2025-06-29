@@ -43,7 +43,9 @@ npm start
 
 ## Live Demo
 
-[https://currency-hunter.netlify.app](https://currency-hunter.netlify.app)
+[https://currency-hunter.vercel.app/](https://currency-hunter.vercel.app/)
+
+![preview](https://r2.tfan2437.workers.dev/temp/currency-hunter.png)
 
 ## Technologies Used
 
