@@ -1,67 +1,53 @@
 # Currency Hunter
 
-## What’s This About?
+## Additional Dependencies
 
-You’ll build a simple currency calculator app using React and TypeScript. Users can add or subtract amounts in different currencies, and see the result in a currency they choose.
+1. Tailwind CSS - Modern CSS framework
+2. Tailwind Merge - Conditional styling
+3. Prettier - className formatting
 
-## Main Features
+## Key Features
 
-1. **Inputs**
-   - Two number fields (A and B) – only numbers allowed
-   - Each has a dropdown to pick a currency
-   - Must include these currencies: USD, TWD, JPY, EUR
-   - Default currency is TWD for inputs and output
+1. **Operations Selector**
+   - Instead of a dropdown operations selector which adds an extra interaction step for users, I implemented a toggle-based selector.
+   - This allows users to directly select operations without opening any dropdown menu, improving usability and efficiency.
 
-2. **Operations**
-   - Let users pick one of these:
-     - Add (just numbers, no currency symbol in result)
-     - Subtract (just numbers, no currency symbol in result)
-     - Add with currency (shows currency symbol in result)
-     - Subtract with currency (shows currency symbol in result)
+2. **Hotkeys Support**
+   - Up and Down arrow keys for increment and decrement when the number input is focused.
 
-3. **Output**
-   - Users pick the output currency
-   - Show currency symbols when using “with currency” operations
-   - No symbols when using plain add/subvisuals
-   - App converts currencies automatically
+3. **Theme**
+   - The theme color and design references the largest crypto trading platform Binance, also matching the theme color of the AIFT Vulcan product.
 
-4. **Exchange Rates**
-   - Use this free API for rates: https://open.er-api.com/v6/latest/TWD
+4. **Minimized UI Design**
+   - For add and subtract operations without currency, the currency selector doesn't appear on both input and output.
+   - Currency selectors are placed at the beginning for these two operations for a cleaner interface.
 
-5. **UI Reference**
-   - Improve the basic UI. You may reference the provided image but are encouraged to apply your own design ideas.
-   ![ui_reference](https://i.imgur.com/AO0T2Av.png)
+5. **Exchange Rates API**
+   - The application fetches exchange rates once when the component mounts using useEffect.
+   - All currency conversions are calculated based on these fetched rates.
+   - Ideally, a production version would use websockets to maintain real-time communication with the backend for frequent updates to currency exchange rates, especially important for trading applications.
+   - An alternative approach without websockets would be polling the rates at short intervals (e.g., 500ms), but this wasn't implemented in this demo due to potential API call limitations.
 
-## Extra Ideas (Optional)
+6. **SEO Optimization**
+   - Enhanced index.html with appropriate title, favicon, and description for better search engine optimization.
 
-Feel free to add any of these if you want:
+## Installation
 
-- Make it look nice if you have any idea (with or without a CSS framework)
-- Use the right input types
-- Show input errors right away
-- Add friendly error messages
-- Support keyboard shortcuts
-- Fix TypeScript warnings
-- Make it run faster
-- Clean up repeated code
-- Any cool ideas you have!
+```bash
+# Install dependencies
+npm install
 
-## How We’ll Grade It
+# Start development server
+npm start
+```
 
-We’ll look at:
+## Live Demo
 
-- If it does all the main stuff
-- How it handles errors and weird cases
-- How clean and organized the code is
-- If it follows good coding habits
-- How well TypeScript is used
-- If it’s easy and nice to use
+[https://currency-hunter.netlify.app](https://currency-hunter.netlify.app)
 
-## What to Submit
+## Technologies Used
 
-Send us:
-
-- Your code
-- Any notes about how it works or choices you made (in comments)
-
-Good luck!
+- React
+- TypeScript
+- Tailwind CSS
+- Open Exchange Rates API
